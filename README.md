@@ -1,4 +1,4 @@
-# ConvenienceStoreManagement
+# Convenience store management
 UIT java app project 07/2021
 
 Tên database:quanlycuahang
