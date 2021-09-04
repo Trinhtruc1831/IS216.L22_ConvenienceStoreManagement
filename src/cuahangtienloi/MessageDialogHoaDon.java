@@ -31,12 +31,13 @@ public class MessageDialogHoaDon extends javax.swing.JFrame {
     public MessageDialogHoaDon() {
         initComponents();
         setVisible(true);
-        this.setLocation(800, 250);
-        tbHoaDon.getColumnModel().getColumn(0).setPreferredWidth(100);
-        tbHoaDon.getColumnModel().getColumn(1).setPreferredWidth(530);
-        tbHoaDon.getColumnModel().getColumn(2).setPreferredWidth(100);
-        tbHoaDon.getColumnModel().getColumn(3).setPreferredWidth(150);
-        tbHoaDon.getColumnModel().getColumn(5).setPreferredWidth(200);
+        this.setLocationRelativeTo(null);
+        tbHoaDon.getColumnModel().getColumn(0).setPreferredWidth(60);
+        tbHoaDon.getColumnModel().getColumn(1).setPreferredWidth(180);
+        tbHoaDon.getColumnModel().getColumn(2).setPreferredWidth(60);
+        tbHoaDon.getColumnModel().getColumn(3).setPreferredWidth(65);
+        tbHoaDon.getColumnModel().getColumn(4).setPreferredWidth(30);
+        tbHoaDon.getColumnModel().getColumn(5).setPreferredWidth(110);
         tbHoaDon.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
         
         
@@ -97,62 +98,65 @@ public class MessageDialogHoaDon extends javax.swing.JFrame {
         btThanhToan = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(372, 572));
+        setPreferredSize(new java.awt.Dimension(372, 572));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Châu Thành");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(130, 50, 190, 40);
+        jLabel1.setBounds(90, 50, 190, 40);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Cửa Hàng Tiện Lợi");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(130, 20, 190, 40);
+        jLabel2.setBounds(90, 20, 190, 40);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/LogoCT.png"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(30, 20, 70, 70);
+        jLabel4.setBounds(20, 20, 40, 40);
 
         jLabel3.setText("Khách hàng:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(30, 150, 80, 16);
+        jLabel3.setBounds(20, 140, 80, 16);
 
         jLabel5.setText("Nhân viên:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(30, 110, 70, 16);
+        jLabel5.setBounds(20, 100, 70, 16);
 
         jLabel6.setText("Ngày lập:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(30, 130, 70, 16);
+        jLabel6.setBounds(20, 120, 70, 16);
 
         lbNhanVien.setText("Nhân viên:");
         getContentPane().add(lbNhanVien);
-        lbNhanVien.setBounds(110, 110, 70, 16);
+        lbNhanVien.setBounds(93, 100, 70, 16);
 
         lbNgayLap.setText("Ngày lập:");
         getContentPane().add(lbNgayLap);
-        lbNgayLap.setBounds(110, 130, 70, 16);
+        lbNgayLap.setBounds(93, 120, 70, 16);
 
         lbKhachHang.setText("Khách hàng:");
         getContentPane().add(lbKhachHang);
-        lbKhachHang.setBounds(110, 150, 80, 16);
+        lbKhachHang.setBounds(93, 140, 80, 16);
 
-        lbDiemTichLuy.setText("Điểm tích lũy:");
+        lbDiemTichLuy.setText("Điểm");
         getContentPane().add(lbDiemTichLuy);
-        lbDiemTichLuy.setBounds(360, 150, 80, 16);
+        lbDiemTichLuy.setBounds(300, 140, 40, 16);
 
         jLabel14.setText("Điểm tích lũy:");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(270, 150, 80, 16);
+        jLabel14.setBounds(220, 140, 80, 16);
 
+        tbHoaDon.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbHoaDon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "MaSP", "Tên", "Điểm", "Đơn Giá", "SL", "Thành Tiền"
+                "Mã", "Tên", "Điểm", "Giá", "SL", "Thành Tiền"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -172,36 +176,37 @@ public class MessageDialogHoaDon extends javax.swing.JFrame {
         }
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 190, 400, 320);
+        jScrollPane1.setBounds(20, 180, 330, 250);
 
         jLabel7.setText("Tổng:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(50, 520, 70, 20);
+        jLabel7.setBounds(20, 440, 70, 20);
 
         jLabel8.setText("Giảm giá:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(50, 540, 70, 20);
+        jLabel8.setBounds(20, 460, 70, 20);
 
         jLabel9.setText("Tổng tiền:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(50, 560, 80, 20);
+        jLabel9.setBounds(20, 480, 80, 20);
 
         lbTong.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbTong.setText("Tổng:");
         getContentPane().add(lbTong);
-        lbTong.setBounds(300, 520, 110, 20);
+        lbTong.setBounds(240, 440, 110, 20);
 
         lbGiamGia.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbGiamGia.setText("Giảm giá:");
         getContentPane().add(lbGiamGia);
-        lbGiamGia.setBounds(300, 540, 110, 20);
+        lbGiamGia.setBounds(240, 460, 110, 20);
 
         lbTongTien.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbTongTien.setText("Tổng tiền:");
         lbTongTien.setToolTipText("");
         getContentPane().add(lbTongTien);
-        lbTongTien.setBounds(300, 560, 110, 20);
+        lbTongTien.setBounds(240, 480, 110, 20);
 
+        btThanhToan.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         btThanhToan.setText("THANH TOÁN");
         btThanhToan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,7 +214,7 @@ public class MessageDialogHoaDon extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btThanhToan);
-        btThanhToan.setBounds(300, 590, 120, 40);
+        btThanhToan.setBounds(240, 510, 110, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

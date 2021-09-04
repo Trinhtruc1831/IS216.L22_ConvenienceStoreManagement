@@ -6,6 +6,7 @@
 package cuahangtienloi;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.table.JTableHeader;
 
@@ -22,6 +23,7 @@ public class TKTrangChu extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
         this.setLocationRelativeTo(null);
+        setPreferredSize(new Dimension(960, 580));
     }
  
     public javax.swing.JLabel getAccount(){
@@ -37,50 +39,19 @@ public class TKTrangChu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        IndexIcon = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        IndexIcon = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         lbUserName = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(956, 539));
+        setPreferredSize(new java.awt.Dimension(973, 580));
         getContentPane().setLayout(null);
-
-        jButton8.setBackground(new java.awt.Color(75, 139, 197));
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Kho Hàng");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton8);
-        jButton8.setBounds(0, 260, 300, 70);
-
-        jButton9.setBackground(new java.awt.Color(75, 139, 197));
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Đăng Xuất");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton9);
-        jButton9.setBounds(0, 370, 300, 70);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/IconReload.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(1890, 150, 30, 30);
 
         IndexIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/IconCT.png"))); // NOI18N
         IndexIcon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -89,65 +60,98 @@ public class TKTrangChu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(IndexIcon);
-        IndexIcon.setBounds(60, 40, 100, 100);
+        IndexIcon.setBounds(30, 20, 60, 60);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("Welcome");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(1590, 60, 170, 50);
+        jButton8.setBackground(new java.awt.Color(75, 139, 197));
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Kho Hàng");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8);
+        jButton8.setBounds(10, 120, 110, 40);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("!!");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(1860, 60, 30, 50);
+        jButton9.setBackground(new java.awt.Color(75, 139, 197));
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("Đăng Xuất");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton9);
+        jButton9.setBounds(10, 170, 110, 40);
 
-        lbUserName.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("!!");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(910, 20, 20, 50);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/IconReload.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(910, 60, 20, 20);
+
+        lbUserName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lbUserName.setForeground(new java.awt.Color(255, 255, 255));
         lbUserName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbUserName.setText("NVxx");
         getContentPane().add(lbUserName);
-        lbUserName.setBounds(1770, 60, 90, 50);
+        lbUserName.setBounds(850, 20, 60, 50);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("Welcome");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(730, 20, 120, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/BackgroundIndex.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1920, 1080);
+        jLabel1.setBounds(0, 0, 956, 539);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void IndexIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IndexIconMouseClicked
+        this.dispose();
+        QLTrangChu reset = new QLTrangChu();
+        reset.getAccount().setText(lbUserName.getText());
+    }//GEN-LAST:event_IndexIconMouseClicked
+
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         this.dispose();
         TKKhoHang reset = new TKKhoHang();
-        reset.setExtendedState(reset.getExtendedState() | TKKhoHang.MAXIMIZED_BOTH);
         reset.getAccount().setText(lbUserName.getText());
         reset.gettfMaNhanVien().setEditable(false);
         reset.gettfMaNhanVien().setText(lbUserName.getText());
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-       this.dispose();
+        this.dispose();
         DangNhap login = new DangNhap();
         login.setVisible(true);
-        login.setExtendedState(login.getExtendedState() | DangNhap.MAXIMIZED_BOTH);
+
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         this.dispose();
-        TKTrangChu reset = new TKTrangChu();
-        reset.setExtendedState(reset.getExtendedState() | TKTrangChu.MAXIMIZED_BOTH);
+        QLBanHang reset = new QLBanHang();
         reset.getAccount().setText(lbUserName.getText());
-    }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void IndexIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IndexIconMouseClicked
-        this.dispose();
-        TKTrangChu reset = new TKTrangChu();
-        reset.setExtendedState(reset.getExtendedState() | TKTrangChu.MAXIMIZED_BOTH);
-        reset.getAccount().setText(lbUserName.getText());
-    }//GEN-LAST:event_IndexIconMouseClicked
+        reset.gettfMaNhanVien().setEditable(false);
+        reset.gettfMaNhanVien().setText(lbUserName.getText());
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -189,9 +193,9 @@ public class TKTrangChu extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel lbUserName;
     // End of variables declaration//GEN-END:variables
 }

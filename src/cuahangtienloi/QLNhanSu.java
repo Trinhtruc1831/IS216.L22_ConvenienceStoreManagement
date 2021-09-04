@@ -6,6 +6,7 @@
 package cuahangtienloi;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -41,18 +42,21 @@ public class QLNhanSu extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
         this.setLocationRelativeTo(null);
+        setPreferredSize(new Dimension(960, 580));
+        
         JTableHeader tableHeader = tbNhanSu.getTableHeader();
         tableHeader.setBackground(new java.awt.Color(75, 139, 197));
         tableHeader.setForeground(Color.white);
-        tableHeader.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        tableHeader.setFont(new Font("Tahoma", Font.PLAIN, 11));
         
-        tbNhanSu.getColumnModel().getColumn(0).setPreferredWidth(70);
+        tbNhanSu.getColumnModel().getColumn(0).setPreferredWidth(150);
         tbNhanSu.getColumnModel().getColumn(1).setPreferredWidth(110);
-        tbNhanSu.getColumnModel().getColumn(2).setPreferredWidth(100);
+        tbNhanSu.getColumnModel().getColumn(2).setPreferredWidth(180);
         tbNhanSu.getColumnModel().getColumn(3).setPreferredWidth(100);
         tbNhanSu.getColumnModel().getColumn(4).setPreferredWidth(100);
-        tbNhanSu.getColumnModel().getColumn(7).setPreferredWidth(110);
-        tbNhanSu.getColumnModel().getColumn(8).setPreferredWidth(100);
+        tbNhanSu.getColumnModel().getColumn(5).setPreferredWidth(150);
+        tbNhanSu.getColumnModel().getColumn(7).setPreferredWidth(280);
+        tbNhanSu.getColumnModel().getColumn(8).setPreferredWidth(200);
         tbNhanSu.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
         try {
             //Load driver
@@ -153,6 +157,23 @@ public class QLNhanSu extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbNhanSu = new javax.swing.JTable();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        tfTen1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        tfSDT1 = new javax.swing.JTextField();
+        tfCMND1 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        cbGioiTinh1 = new javax.swing.JComboBox<>();
+        cbChucVu1 = new javax.swing.JComboBox<>();
+        jLabel16 = new javax.swing.JLabel();
+        lbThongBao = new javax.swing.JLabel();
+        lbMNV = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        cbTinhTrang = new javax.swing.JComboBox<>();
+        btCapNhat = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -171,42 +192,27 @@ public class QLNhanSu extends javax.swing.JFrame {
         btXacNhan = new javax.swing.JButton();
         pfMatKhau = new javax.swing.JPasswordField();
         cbHien = new javax.swing.JCheckBox();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        tfTen1 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        tfSDT1 = new javax.swing.JTextField();
-        tfCMND1 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        cbGioiTinh1 = new javax.swing.JComboBox<>();
-        cbChucVu1 = new javax.swing.JComboBox<>();
-        jLabel16 = new javax.swing.JLabel();
-        lbThongBao = new javax.swing.JLabel();
-        lbMNV = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        cbTinhTrang = new javax.swing.JComboBox<>();
-        btCapNhat = new javax.swing.JButton();
         tfTimKiem = new javax.swing.JTextField();
         btTimKiem = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        lbUserName = new javax.swing.JLabel();
         IndexIcon = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
-        jLabel20 = new javax.swing.JLabel();
+        jButton10 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        lbUserName = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(956, 539));
+        setPreferredSize(new java.awt.Dimension(960, 580));
         getContentPane().setLayout(null);
 
-        tbNhanSu.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tbNhanSu.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbNhanSu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -223,8 +229,9 @@ public class QLNhanSu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tbNhanSu.setIntercellSpacing(new java.awt.Dimension(10, 10));
-        tbNhanSu.setRowHeight(35);
+        tbNhanSu.setMinimumSize(new java.awt.Dimension(0, 0));
+        tbNhanSu.setRowHeight(20);
+        tbNhanSu.setRowMargin(5);
         tbNhanSu.setSelectionBackground(new java.awt.Color(204, 204, 255));
         tbNhanSu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -234,149 +241,57 @@ public class QLNhanSu extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbNhanSu);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(470, 270, 860, 290);
-
-        jPanel2.setLayout(null);
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel2.setText("Đăng ký tài khoản ");
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(120, 60, 190, 30);
-
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Tên:");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(50, 160, 41, 20);
-
-        tfUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfUserActionPerformed(evt);
-            }
-        });
-        jPanel2.add(tfUser);
-        tfUser.setBounds(100, 130, 220, 22);
-        jPanel2.add(tfSDT);
-        tfSDT.setBounds(100, 190, 220, 22);
-
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("Sđt:");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(50, 190, 41, 20);
-
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("Chức vụ:");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(30, 280, 60, 20);
-        jPanel2.add(tfCMND);
-        tfCMND.setBounds(100, 220, 220, 22);
-
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel6.setText("CMND:");
-        jPanel2.add(jLabel6);
-        jLabel6.setBounds(50, 220, 41, 20);
-
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setText("Giới Tính:");
-        jPanel2.add(jLabel7);
-        jLabel7.setBounds(30, 250, 60, 20);
-
-        cbChucVu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thu Ngân", "Thủ Kho", "Quản Lý" }));
-        cbChucVu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbChucVuActionPerformed(evt);
-            }
-        });
-        jPanel2.add(cbChucVu);
-        cbChucVu.setBounds(100, 280, 80, 22);
-
-        cbGioiTinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nữ", "Nam" }));
-        cbGioiTinh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbGioiTinhActionPerformed(evt);
-            }
-        });
-        jPanel2.add(cbGioiTinh);
-        cbGioiTinh.setBounds(100, 250, 80, 22);
-
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel8.setText("User:");
-        jPanel2.add(jLabel8);
-        jLabel8.setBounds(50, 130, 41, 20);
-
-        tfTen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfTenActionPerformed(evt);
-            }
-        });
-        jPanel2.add(tfTen);
-        tfTen.setBounds(100, 160, 220, 22);
-
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel9.setText("Mật khẩu:");
-        jPanel2.add(jLabel9);
-        jLabel9.setBounds(30, 320, 60, 16);
-
-        btXacNhan.setText("Xác Nhận");
-        btXacNhan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btXacNhanActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btXacNhan);
-        btXacNhan.setBounds(140, 420, 120, 40);
-        jPanel2.add(pfMatKhau);
-        pfMatKhau.setBounds(100, 320, 160, 22);
-
-        cbHien.setText("Hiện");
-        cbHien.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cbHienMouseClicked(evt);
-            }
-        });
-        jPanel2.add(cbHien);
-        cbHien.setBounds(270, 320, 60, 25);
-
-        jTabbedPane1.addTab("Đăng ký tài khoản", jPanel2);
+        jScrollPane1.setBounds(160, 130, 450, 220);
 
         jPanel3.setLayout(null);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel10.setText("Cập nhật tài khoản ");
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("CẬP NHẬT TÀI KHOẢN ");
         jPanel3.add(jLabel10);
-        jLabel10.setBounds(120, 60, 200, 30);
+        jLabel10.setBounds(80, 20, 170, 30);
 
+        tfTen1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         tfTen1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfTen1ActionPerformed(evt);
             }
         });
         jPanel3.add(tfTen1);
-        tfTen1.setBounds(110, 130, 220, 22);
+        tfTen1.setBounds(90, 90, 160, 17);
 
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("Tên:");
         jPanel3.add(jLabel12);
-        jLabel12.setBounds(60, 130, 41, 20);
+        jLabel12.setBounds(40, 90, 41, 20);
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Sđt:");
         jPanel3.add(jLabel13);
-        jLabel13.setBounds(60, 160, 41, 20);
-        jPanel3.add(tfSDT1);
-        tfSDT1.setBounds(110, 160, 220, 22);
-        jPanel3.add(tfCMND1);
-        tfCMND1.setBounds(110, 190, 220, 22);
+        jLabel13.setBounds(40, 110, 41, 20);
 
+        tfSDT1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jPanel3.add(tfSDT1);
+        tfSDT1.setBounds(90, 110, 160, 17);
+
+        tfCMND1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jPanel3.add(tfCMND1);
+        tfCMND1.setBounds(90, 130, 160, 17);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel14.setText("CMND:");
         jPanel3.add(jLabel14);
-        jLabel14.setBounds(60, 190, 41, 20);
+        jLabel14.setBounds(40, 130, 41, 20);
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel15.setText("Giới Tính:");
         jPanel3.add(jLabel15);
-        jLabel15.setBounds(40, 220, 60, 20);
+        jLabel15.setBounds(20, 150, 60, 20);
 
+        cbGioiTinh1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         cbGioiTinh1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nữ", "Nam" }));
         cbGioiTinh1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -384,8 +299,9 @@ public class QLNhanSu extends javax.swing.JFrame {
             }
         });
         jPanel3.add(cbGioiTinh1);
-        cbGioiTinh1.setBounds(110, 220, 100, 22);
+        cbGioiTinh1.setBounds(90, 150, 70, 17);
 
+        cbChucVu1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         cbChucVu1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thu Ngân", "Thủ Kho", "Quản Lý" }));
         cbChucVu1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -393,29 +309,34 @@ public class QLNhanSu extends javax.swing.JFrame {
             }
         });
         jPanel3.add(cbChucVu1);
-        cbChucVu1.setBounds(110, 250, 100, 22);
+        cbChucVu1.setBounds(90, 170, 70, 17);
 
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel16.setText("Chức vụ:");
         jPanel3.add(jLabel16);
-        jLabel16.setBounds(40, 250, 60, 20);
+        jLabel16.setBounds(20, 170, 60, 20);
 
+        lbThongBao.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         lbThongBao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jPanel3.add(lbThongBao);
-        lbThongBao.setBounds(60, 100, 170, 20);
+        lbThongBao.setBounds(30, 70, 170, 20);
 
+        lbMNV.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         lbMNV.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jPanel3.add(lbMNV);
-        lbMNV.setBounds(240, 100, 60, 20);
+        lbMNV.setBounds(202, 70, 50, 20);
 
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Tình trạng:");
         jPanel3.add(jLabel11);
-        jLabel11.setBounds(20, 280, 80, 16);
+        jLabel11.setBounds(0, 190, 80, 20);
 
+        cbTinhTrang.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         cbTinhTrang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nghỉ Làm", "Đang Làm" }));
         jPanel3.add(cbTinhTrang);
-        cbTinhTrang.setBounds(110, 280, 100, 22);
+        cbTinhTrang.setBounds(90, 190, 70, 17);
 
         btCapNhat.setText("Cập Nhật");
         btCapNhat.addActionListener(new java.awt.event.ActionListener() {
@@ -424,14 +345,144 @@ public class QLNhanSu extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btCapNhat);
-        btCapNhat.setBounds(140, 420, 120, 40);
+        btCapNhat.setBounds(140, 290, 120, 40);
 
         jTabbedPane1.addTab("Cập nhật thông tin", jPanel3);
 
+        jPanel2.setLayout(null);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setText("ĐĂNG KÝ TÀI KHOẢN");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(80, 20, 170, 30);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("Tên:");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(30, 100, 41, 20);
+
+        tfUser.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        tfUser.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        tfUser.setMinimumSize(new java.awt.Dimension(1, 20));
+        tfUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfUserActionPerformed(evt);
+            }
+        });
+        jPanel2.add(tfUser);
+        tfUser.setBounds(80, 83, 150, 17);
+
+        tfSDT.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        tfSDT.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        tfSDT.setMinimumSize(new java.awt.Dimension(1, 20));
+        jPanel2.add(tfSDT);
+        tfSDT.setBounds(80, 123, 150, 17);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("Sđt:");
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(30, 120, 41, 20);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("Chức vụ:");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(10, 180, 60, 20);
+
+        tfCMND.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        tfCMND.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        tfCMND.setMinimumSize(new java.awt.Dimension(1, 20));
+        jPanel2.add(tfCMND);
+        tfCMND.setBounds(80, 143, 150, 17);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("CMND:");
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(30, 140, 41, 20);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel7.setText("Giới Tính:");
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(10, 160, 60, 20);
+
+        cbChucVu.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        cbChucVu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thu Ngân", "Thủ Kho", "Quản Lý" }));
+        cbChucVu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbChucVuActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cbChucVu);
+        cbChucVu.setBounds(80, 183, 70, 18);
+
+        cbGioiTinh.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        cbGioiTinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nữ", "Nam" }));
+        cbGioiTinh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbGioiTinhActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cbGioiTinh);
+        cbGioiTinh.setBounds(80, 163, 70, 18);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("User:");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(30, 80, 41, 20);
+
+        tfTen.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        tfTen.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        tfTen.setMinimumSize(new java.awt.Dimension(1, 20));
+        tfTen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTenActionPerformed(evt);
+            }
+        });
+        jPanel2.add(tfTen);
+        tfTen.setBounds(80, 103, 150, 17);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel9.setText("Mật khẩu:");
+        jPanel2.add(jLabel9);
+        jLabel9.setBounds(10, 200, 60, 20);
+
+        btXacNhan.setText("Xác Nhận");
+        btXacNhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btXacNhanActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btXacNhan);
+        btXacNhan.setBounds(140, 290, 120, 40);
+
+        pfMatKhau.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        pfMatKhau.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        pfMatKhau.setMinimumSize(new java.awt.Dimension(1, 20));
+        jPanel2.add(pfMatKhau);
+        pfMatKhau.setBounds(80, 204, 110, 17);
+
+        cbHien.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        cbHien.setText("Hiện");
+        cbHien.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbHienMouseClicked(evt);
+            }
+        });
+        jPanel2.add(cbHien);
+        cbHien.setBounds(190, 200, 60, 25);
+
+        jTabbedPane1.addTab("Đăng ký tài khoản", jPanel2);
+
         getContentPane().add(jTabbedPane1);
-        jTabbedPane1.setBounds(1430, 260, 430, 640);
+        jTabbedPane1.setBounds(630, 130, 300, 390);
         getContentPane().add(tfTimKiem);
-        tfTimKiem.setBounds(470, 230, 200, 22);
+        tfTimKiem.setBounds(160, 100, 140, 22);
 
         btTimKiem.setText("Tìm");
         btTimKiem.addActionListener(new java.awt.event.ActionListener() {
@@ -440,28 +491,7 @@ public class QLNhanSu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btTimKiem);
-        btTimKiem.setBounds(680, 230, 55, 20);
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel18.setText("Welcome");
-        getContentPane().add(jLabel18);
-        jLabel18.setBounds(1590, 60, 170, 50);
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel19.setText("!!");
-        getContentPane().add(jLabel19);
-        jLabel19.setBounds(1860, 60, 30, 50);
-
-        lbUserName.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        lbUserName.setForeground(new java.awt.Color(255, 255, 255));
-        lbUserName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbUserName.setText("NVxx");
-        getContentPane().add(lbUserName);
-        lbUserName.setBounds(1770, 60, 90, 50);
+        btTimKiem.setBounds(330, 100, 60, 20);
 
         IndexIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/IconCT.png"))); // NOI18N
         IndexIcon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -470,70 +500,10 @@ public class QLNhanSu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(IndexIcon);
-        IndexIcon.setBounds(60, 40, 100, 100);
-
-        jButton8.setBackground(new java.awt.Color(75, 139, 197));
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Bán Hàng");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton8);
-        jButton8.setBounds(0, 260, 300, 70);
-
-        jButton9.setBackground(new java.awt.Color(75, 139, 197));
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Thành Viên");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton9);
-        jButton9.setBounds(0, 370, 300, 70);
-
-        jButton7.setBackground(new java.awt.Color(75, 139, 197));
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Nhân Viên");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton7);
-        jButton7.setBounds(0, 480, 300, 70);
-
-        jButton2.setBackground(new java.awt.Color(75, 139, 197));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Thống Kê");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(0, 590, 300, 70);
-
-        jButton10.setBackground(new java.awt.Color(75, 139, 197));
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Kho Hàng");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton10);
-        jButton10.setBounds(0, 700, 300, 70);
+        IndexIcon.setBounds(30, 20, 60, 60);
 
         jButton11.setBackground(new java.awt.Color(75, 139, 197));
-        jButton11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Đăng Xuất");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -542,20 +512,103 @@ public class QLNhanSu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton11);
-        jButton11.setBounds(0, 810, 300, 70);
+        jButton11.setBounds(10, 370, 110, 40);
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/IconReload.png"))); // NOI18N
-        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel20MouseClicked(evt);
+        jButton10.setBackground(new java.awt.Color(75, 139, 197));
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setText("Kho Hàng");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
             }
         });
-        getContentPane().add(jLabel20);
-        jLabel20.setBounds(1890, 150, 30, 30);
+        getContentPane().add(jButton10);
+        jButton10.setBounds(10, 320, 110, 40);
+
+        jButton2.setBackground(new java.awt.Color(75, 139, 197));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Thống Kê");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(10, 270, 110, 40);
+
+        jButton7.setBackground(new java.awt.Color(75, 139, 197));
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("Nhân Viên");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7);
+        jButton7.setBounds(10, 220, 110, 40);
+
+        jButton9.setBackground(new java.awt.Color(75, 139, 197));
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("Thành Viên");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton9);
+        jButton9.setBounds(10, 170, 110, 40);
+
+        jButton8.setBackground(new java.awt.Color(75, 139, 197));
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Bán Hàng");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8);
+        jButton8.setBounds(10, 120, 110, 40);
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel17.setText("!!");
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(910, 20, 20, 50);
+
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/IconReload.png"))); // NOI18N
+        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel18MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(910, 60, 20, 20);
+
+        lbUserName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lbUserName.setForeground(new java.awt.Color(255, 255, 255));
+        lbUserName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbUserName.setText("NVxx");
+        getContentPane().add(lbUserName);
+        lbUserName.setBounds(850, 20, 60, 50);
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel19.setText("Welcome");
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(730, 20, 120, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/Background.png"))); // NOI18N
+        jLabel1.setPreferredSize(new java.awt.Dimension(973, 580));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1920, 1080);
+        jLabel1.setBounds(0, 0, 1000, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -610,7 +663,6 @@ public class QLNhanSu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Trường thông tin không hợp lệ!",  "", JOptionPane.WARNING_MESSAGE);
             this.dispose();
             QLNhanSu reset = new QLNhanSu();
-            reset.setExtendedState(reset.getExtendedState() | QLNhanSu.MAXIMIZED_BOTH);
             reset.getAccount().setText(lbUserName.getText());
         }
         else{
@@ -719,7 +771,6 @@ public class QLNhanSu extends javax.swing.JFrame {
 
                     this.dispose();
                     QLNhanSu reset = new QLNhanSu();
-                    reset.setExtendedState(reset.getExtendedState() | QLNhanSu.MAXIMIZED_BOTH);
                     reset.getAccount().setText(lbUserName.getText());
                     
                 }
@@ -840,7 +891,6 @@ public class QLNhanSu extends javax.swing.JFrame {
             
             this.dispose();
             QLNhanSu reset = new QLNhanSu();
-            reset.setExtendedState(reset.getExtendedState() | QLNhanSu.MAXIMIZED_BOTH);
             reset.getAccount().setText(lbUserName.getText());
      
         }catch(SQLException se)
@@ -952,63 +1002,57 @@ public class QLNhanSu extends javax.swing.JFrame {
     private void IndexIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IndexIconMouseClicked
         this.dispose();
         QLTrangChu reset = new QLTrangChu();
-        reset.setExtendedState(reset.getExtendedState() | QLTrangChu.MAXIMIZED_BOTH);
         reset.getAccount().setText(lbUserName.getText());
     }//GEN-LAST:event_IndexIconMouseClicked
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        this.dispose();
-        QLBanHang reset = new QLBanHang();
-        reset.setExtendedState(reset.getExtendedState() | QLBanHang.MAXIMIZED_BOTH);
-        reset.getAccount().setText(lbUserName.getText());
-        reset.gettfMaNhanVien().setEditable(false);
-        reset.gettfMaNhanVien().setText(lbUserName.getText());
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-
-        this.dispose();
-        QLKhachHang reset = new QLKhachHang();
-        reset.setExtendedState(reset.getExtendedState() | QLKhachHang.MAXIMIZED_BOTH);
-        reset.getAccount().setText(lbUserName.getText());
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        this.dispose();
-        QLNhanSu reset = new QLNhanSu();
-        reset.setExtendedState(reset.getExtendedState() | QLNhanSu.MAXIMIZED_BOTH);
-        reset.getAccount().setText(lbUserName.getText());
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose();
-        QLThongKe reset = new QLThongKe();
-        reset.setExtendedState(reset.getExtendedState() | QLThongKe.MAXIMIZED_BOTH);
-        reset.getAccount().setText(lbUserName.getText());
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        this.dispose();
-        QLKhoHang reset = new QLKhoHang();
-        reset.setExtendedState(reset.getExtendedState() | QLKhoHang.MAXIMIZED_BOTH);
-        reset.getAccount().setText(lbUserName.getText());
-        reset.gettfMaNhanVien().setEditable(false);
-        reset.gettfMaNhanVien().setText(lbUserName.getText());
-    }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         this.dispose();
         DangNhap login = new DangNhap();
         login.setVisible(true);
-        login.setExtendedState(login.getExtendedState() | DangNhap.MAXIMIZED_BOTH);
     }//GEN-LAST:event_jButton11ActionPerformed
 
-    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        this.dispose();
+        QLKhoHang reset = new QLKhoHang();
+        reset.getAccount().setText(lbUserName.getText());
+        reset.gettfMaNhanVien().setEditable(false);
+        reset.gettfMaNhanVien().setText(lbUserName.getText());
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+        QLThongKe reset = new QLThongKe();
+        reset.getAccount().setText(lbUserName.getText());
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         this.dispose();
         QLNhanSu reset = new QLNhanSu();
-        reset.setExtendedState(reset.getExtendedState() | QLNhanSu.MAXIMIZED_BOTH);
         reset.getAccount().setText(lbUserName.getText());
-    }//GEN-LAST:event_jLabel20MouseClicked
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+
+        this.dispose();
+        QLKhachHang reset = new QLKhachHang();
+        reset.getAccount().setText(lbUserName.getText());
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        this.dispose();
+        QLBanHang reset = new QLBanHang();
+        reset.getAccount().setText(lbUserName.getText());
+        reset.gettfMaNhanVien().setEditable(false);
+        reset.gettfMaNhanVien().setText(lbUserName.getText());
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+        this.dispose();
+        QLBanHang reset = new QLBanHang();
+        reset.getAccount().setText(lbUserName.getText());
+        reset.gettfMaNhanVien().setEditable(false);
+        reset.gettfMaNhanVien().setText(lbUserName.getText());
+    }//GEN-LAST:event_jLabel18MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1070,10 +1114,10 @@ public class QLNhanSu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

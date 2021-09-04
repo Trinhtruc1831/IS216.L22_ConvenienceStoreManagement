@@ -6,6 +6,7 @@
 package cuahangtienloi;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -36,15 +37,16 @@ public class QLKhachHang extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
         this.setLocationRelativeTo(null);
+        setPreferredSize(new Dimension(960, 580));
         JTableHeader tableHeader = tbThanhVien.getTableHeader();
         tableHeader.setBackground(new java.awt.Color(75, 139, 197));
         tableHeader.setForeground(Color.white);
-        tableHeader.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        tableHeader.setFont(new Font("Tahoma", Font.PLAIN, 11));
         
         tbThanhVien.getColumnModel().getColumn(0).setPreferredWidth(150);
         tbThanhVien.getColumnModel().getColumn(1).setPreferredWidth(500);
         tbThanhVien.getColumnModel().getColumn(2).setPreferredWidth(400);
-        tbThanhVien.getColumnModel().getColumn(3).setPreferredWidth(150);
+        tbThanhVien.getColumnModel().getColumn(3).setPreferredWidth(250);
         tbThanhVien.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
         try {
             //Load driver
@@ -109,6 +111,21 @@ public class QLKhachHang extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbThanhVien = new javax.swing.JTable();
+        tfTimKiem = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        IndexIcon = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lbUserName = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         lbThongBao = new javax.swing.JLabel();
@@ -119,77 +136,14 @@ public class QLKhachHang extends javax.swing.JFrame {
         btThem = new javax.swing.JButton();
         btSua = new javax.swing.JButton();
         lbMKH = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbThanhVien = new javax.swing.JTable();
-        tfTimKiem = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        lbUserName = new javax.swing.JLabel();
-        IndexIcon = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(956, 539));
+        setPreferredSize(new java.awt.Dimension(973, 580));
         getContentPane().setLayout(null);
 
-        jPanel1.setLayout(null);
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setText("QUẢN LÝ THÀNH VIÊN");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(140, 20, 210, 30);
-
-        lbThongBao.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(lbThongBao);
-        lbThongBao.setBounds(40, 80, 220, 20);
-
-        lbKhachHang.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbKhachHang.setText("Tên khách hàng: ");
-        jPanel1.add(lbKhachHang);
-        lbKhachHang.setBounds(30, 120, 110, 16);
-
-        lbSDT.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbSDT.setText("SĐT: ");
-        jPanel1.add(lbSDT);
-        lbSDT.setBounds(30, 150, 110, 16);
-        jPanel1.add(tfTenThanhVien);
-        tfTenThanhVien.setBounds(150, 120, 190, 22);
-        jPanel1.add(tfSDT);
-        tfSDT.setBounds(150, 150, 190, 22);
-
-        btThem.setText("Thêm");
-        btThem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btThemActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btThem);
-        btThem.setBounds(140, 460, 140, 50);
-
-        btSua.setText("Sửa");
-        btSua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSuaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btSua);
-        btSua.setBounds(290, 460, 130, 50);
-
-        lbMKH.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPanel1.add(lbMKH);
-        lbMKH.setBounds(260, 80, 80, 20);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(1410, 260, 450, 580);
-
-        tbThanhVien.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        tbThanhVien.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbThanhVien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -206,8 +160,9 @@ public class QLKhachHang extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tbThanhVien.setIntercellSpacing(new java.awt.Dimension(10, 10));
-        tbThanhVien.setRowHeight(35);
+        tbThanhVien.setMinimumSize(new java.awt.Dimension(0, 0));
+        tbThanhVien.setRowHeight(20);
+        tbThanhVien.setRowMargin(5);
         tbThanhVien.setSelectionBackground(new java.awt.Color(204, 204, 255));
         tbThanhVien.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -217,7 +172,7 @@ public class QLKhachHang extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbThanhVien);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(470, 260, 860, 340);
+        jScrollPane1.setBounds(180, 130, 450, 200);
 
         tfTimKiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,7 +180,7 @@ public class QLKhachHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tfTimKiem);
-        tfTimKiem.setBounds(470, 230, 210, 22);
+        tfTimKiem.setBounds(180, 100, 210, 20);
 
         jButton1.setText("Tìm");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -234,28 +189,7 @@ public class QLKhachHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(690, 230, 60, 25);
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel6.setText("Welcome");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(1590, 60, 170, 50);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("!!");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(1860, 60, 30, 50);
-
-        lbUserName.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        lbUserName.setForeground(new java.awt.Color(255, 255, 255));
-        lbUserName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lbUserName.setText("NVxx");
-        getContentPane().add(lbUserName);
-        lbUserName.setBounds(1770, 60, 90, 50);
+        jButton1.setBounds(400, 100, 60, 20);
 
         IndexIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/IconCT.png"))); // NOI18N
         IndexIcon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -264,70 +198,10 @@ public class QLKhachHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(IndexIcon);
-        IndexIcon.setBounds(60, 40, 100, 100);
-
-        jButton8.setBackground(new java.awt.Color(75, 139, 197));
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Bán Hàng");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton8);
-        jButton8.setBounds(0, 260, 300, 70);
-
-        jButton9.setBackground(new java.awt.Color(75, 139, 197));
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton9.setForeground(new java.awt.Color(255, 255, 255));
-        jButton9.setText("Thành Viên");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton9);
-        jButton9.setBounds(0, 370, 300, 70);
-
-        jButton7.setBackground(new java.awt.Color(75, 139, 197));
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("Nhân Viên");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton7);
-        jButton7.setBounds(0, 480, 300, 70);
-
-        jButton2.setBackground(new java.awt.Color(75, 139, 197));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Thống Kê");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(0, 590, 300, 70);
-
-        jButton10.setBackground(new java.awt.Color(75, 139, 197));
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 255, 255));
-        jButton10.setText("Kho Hàng");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton10);
-        jButton10.setBounds(0, 700, 300, 70);
+        IndexIcon.setBounds(30, 20, 60, 60);
 
         jButton11.setBackground(new java.awt.Color(75, 139, 197));
-        jButton11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Đăng Xuất");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -336,8 +210,76 @@ public class QLKhachHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton11);
-        jButton11.setBounds(0, 810, 300, 70);
+        jButton11.setBounds(10, 370, 110, 40);
 
+        jButton10.setBackground(new java.awt.Color(75, 139, 197));
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setText("Kho Hàng");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton10);
+        jButton10.setBounds(10, 320, 110, 40);
+
+        jButton2.setBackground(new java.awt.Color(75, 139, 197));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Thống Kê");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(10, 270, 110, 40);
+
+        jButton7.setBackground(new java.awt.Color(75, 139, 197));
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("Nhân Viên");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7);
+        jButton7.setBounds(10, 220, 110, 40);
+
+        jButton9.setBackground(new java.awt.Color(75, 139, 197));
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("Thành Viên");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton9);
+        jButton9.setBounds(10, 170, 110, 40);
+
+        jButton8.setBackground(new java.awt.Color(75, 139, 197));
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Bán Hàng");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8);
+        jButton8.setBounds(10, 120, 110, 40);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("!!");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(910, 20, 20, 50);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/IconReload.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -345,148 +287,91 @@ public class QLKhachHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(1890, 150, 30, 30);
+        jLabel3.setBounds(910, 60, 20, 20);
+
+        lbUserName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lbUserName.setForeground(new java.awt.Color(255, 255, 255));
+        lbUserName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbUserName.setText("NVxx");
+        getContentPane().add(lbUserName);
+        lbUserName.setBounds(850, 20, 60, 50);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("Welcome");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(730, 20, 120, 50);
+
+        jPanel1.setLayout(null);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setText("QUẢN LÝ THÀNH VIÊN");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(70, 20, 180, 30);
+
+        lbThongBao.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lbThongBao.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(lbThongBao);
+        lbThongBao.setBounds(30, 72, 170, 17);
+
+        lbKhachHang.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lbKhachHang.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbKhachHang.setText("Tên: ");
+        jPanel1.add(lbKhachHang);
+        lbKhachHang.setBounds(20, 90, 40, 20);
+
+        lbSDT.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lbSDT.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbSDT.setText("SĐT: ");
+        jPanel1.add(lbSDT);
+        lbSDT.setBounds(30, 110, 30, 20);
+
+        tfTenThanhVien.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        tfTenThanhVien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTenThanhVienActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tfTenThanhVien);
+        tfTenThanhVien.setBounds(60, 92, 160, 17);
+
+        tfSDT.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jPanel1.add(tfSDT);
+        tfSDT.setBounds(60, 113, 160, 17);
+
+        btThem.setText("Thêm");
+        btThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btThemActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btThem);
+        btThem.setBounds(100, 280, 80, 30);
+
+        btSua.setText("Sửa");
+        btSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSuaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btSua);
+        btSua.setBounds(190, 280, 80, 30);
+
+        lbMKH.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lbMKH.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jPanel1.add(lbMKH);
+        lbMKH.setBounds(200, 72, 40, 17);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(640, 130, 290, 340);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/Background.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1920, 1080);
+        jLabel1.setBounds(0, 0, 956, 539);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btThemActionPerformed
-    
-        String TK = tfTenThanhVien.getText();
-        String SDT = tfSDT.getText();
-        
-        try{
-        Double.parseDouble(tfSDT.getText());
-        }catch(Exception e ){
-            JOptionPane.showMessageDialog(null, "Số điện thoại nhập không đúng định dạng!",  "", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        if(TK.equals("") | SDT.equals("")){
-            JOptionPane.showMessageDialog(null, "Trường thông tin không hợp lệ!",  "", JOptionPane.WARNING_MESSAGE);
-            this.dispose();
-            QLKhachHang reset = new QLKhachHang();
-            reset.setExtendedState(reset.getExtendedState() | QLKhachHang.MAXIMIZED_BOTH);
-            reset.getAccount().setText(lbUserName.getText());
-        }
-        else{
-            String khprefixLessTen = "KH0";
-            String khprefixEqMoreTen = "KH";
-
-            try { 
-
-                    String urlUnicode = "jdbc:mysql://localhost:3306/quanlycuahang?user=root&password=&useUnicode=true&characterEncoding=utf8";
-                    String driver = "com.mysql.jdbc.Driver";
-                    Class.forName(driver).newInstance();
-                    conn = (Connection) DriverManager.getConnection(urlUnicode);
-
-
-                    //Tạo mã kh bằng cách đếm dòng hiện tại, tạo string = HD_xx
-                    String SQL1 = "SELECT * FROM khachhang";    
-                    Statement stat1 = conn.createStatement();
-                    ResultSet rs1 = stat1.executeQuery(SQL1);
-                    rs1.last();
-
-
-                    int countkh;//Thứ tự mã lớn nhất hiện tại
-                    countkh = rs1.getRow();//Do Mã bắt đầu từ 01, và có dòng rỗng 00
-                    String strcounthd = String.valueOf(countkh);
-                    String MHD="";
-                    if(countkh<10){
-                        MHD = khprefixLessTen+strcounthd;
-                    }
-                    else{
-                        MHD = khprefixEqMoreTen+strcounthd;
-                    }
-                    rs1.close();
-                    stat1.close();
-
-
-                    String SQL2="INSERT INTO khachhang VALUES(?,?,?,0)";
-
-                    PreparedStatement stat2 = conn.prepareStatement(SQL2);
-                    stat2.setString(1, MHD);
-                    stat2.setString(2, TK);
-                    stat2.setString(3, SDT);
-
-                    stat2.executeUpdate();
-                    conn.close();
-                    JOptionPane.showMessageDialog(null, "Thêm thành công",  "", JOptionPane.WARNING_MESSAGE);
-                    this.dispose();
-                    QLKhachHang reset = new QLKhachHang();
-                    reset.setExtendedState(reset.getExtendedState() | QLKhachHang.MAXIMIZED_BOTH);
-                    reset.getAccount().setText(lbUserName.getText());
-                    
-            } catch (SQLException ex) {
-                Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (InstantiationException ex) {
-                Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IllegalAccessException ex) {
-                Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        }
-                
-        
-    }//GEN-LAST:event_btThemActionPerformed
-
-    private void btSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSuaActionPerformed
-        
-        DefaultTableModel dsThanhVien =(DefaultTableModel) tbThanhVien.getModel();
-        int SelectedRows = tbThanhVien.getSelectedRow();
-        
-        String MKH = lbMKH.getText();
-        String TK = tfTenThanhVien.getText();
-        String SDT = tfSDT.getText();
-                   
-             
-        try{
-        Double.parseDouble(tfSDT.getText());
-        }catch(Exception e ){
-            JOptionPane.showMessageDialog(null, "Số điện thoại nhập không đúng định dạng!",  "", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        
-        try { 
-                String urlUnicode = "jdbc:mysql://localhost:3306/quanlycuahang?user=root&password=&useUnicode=true&characterEncoding=utf8";
-                String driver = "com.mysql.jdbc.Driver";
-                Class.forName(driver).newInstance();
-                conn = (Connection) DriverManager.getConnection(urlUnicode);
-                
-                
-                
-                String SQL1="UPDATE khachhang SET TenKH = ?, sdtKH = ? WHERE MaKH = ?";
-
-                PreparedStatement stat1 = conn.prepareStatement(SQL1);
-                
-                stat1.setString(1, TK);
-                stat1.setString(2, SDT);
-                stat1.setString(3, MKH);
-
-                stat1.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Cập nhật thành công",  "", JOptionPane.WARNING_MESSAGE);
-                this.dispose();
-                this.dispose();
-                QLKhachHang reset = new QLKhachHang();
-                reset.setExtendedState(reset.getExtendedState() | QLKhachHang.MAXIMIZED_BOTH);
-                reset.getAccount().setText(lbUserName.getText());
-
-        } catch (SQLException ex) {
-            Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btSuaActionPerformed
 
     private void tbThanhVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbThanhVienMouseClicked
         DefaultTableModel dsThanhVien =(DefaultTableModel)tbThanhVien.getModel();
@@ -560,63 +445,184 @@ public class QLKhachHang extends javax.swing.JFrame {
     private void IndexIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IndexIconMouseClicked
         this.dispose();
         QLTrangChu reset = new QLTrangChu();
-        reset.setExtendedState(reset.getExtendedState() | QLTrangChu.MAXIMIZED_BOTH);
         reset.getAccount().setText(lbUserName.getText());
     }//GEN-LAST:event_IndexIconMouseClicked
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        this.dispose();
-        QLBanHang reset = new QLBanHang();
-        reset.setExtendedState(reset.getExtendedState() | QLBanHang.MAXIMIZED_BOTH);
-        reset.getAccount().setText(lbUserName.getText());
-        reset.gettfMaNhanVien().setEditable(false);
-        reset.gettfMaNhanVien().setText(lbUserName.getText());
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-
-        this.dispose();
-        QLKhachHang reset = new QLKhachHang();
-        reset.setExtendedState(reset.getExtendedState() | QLKhachHang.MAXIMIZED_BOTH);
-        reset.getAccount().setText(lbUserName.getText());
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        this.dispose();
-        QLNhanSu reset = new QLNhanSu();
-        reset.setExtendedState(reset.getExtendedState() | QLNhanSu.MAXIMIZED_BOTH);
-        reset.getAccount().setText(lbUserName.getText());
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose();
-        QLThongKe reset = new QLThongKe();
-        reset.setExtendedState(reset.getExtendedState() | QLThongKe.MAXIMIZED_BOTH);
-        reset.getAccount().setText(lbUserName.getText());
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        this.dispose();
-        QLKhoHang reset = new QLKhoHang();
-        reset.setExtendedState(reset.getExtendedState() | QLKhoHang.MAXIMIZED_BOTH);
-        reset.getAccount().setText(lbUserName.getText());
-        reset.gettfMaNhanVien().setEditable(false);
-        reset.gettfMaNhanVien().setText(lbUserName.getText());
-    }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         this.dispose();
         DangNhap login = new DangNhap();
         login.setVisible(true);
-        login.setExtendedState(login.getExtendedState() | DangNhap.MAXIMIZED_BOTH);
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        this.dispose();
+        QLKhoHang reset = new QLKhoHang();
+        reset.getAccount().setText(lbUserName.getText());
+        reset.gettfMaNhanVien().setEditable(false);
+        reset.gettfMaNhanVien().setText(lbUserName.getText());
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+        QLThongKe reset = new QLThongKe();
+        reset.getAccount().setText(lbUserName.getText());
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        this.dispose();
+        QLNhanSu reset = new QLNhanSu();
+        reset.getAccount().setText(lbUserName.getText());
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+
+        this.dispose();
+        QLKhachHang reset = new QLKhachHang();
+        reset.getAccount().setText(lbUserName.getText());
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        this.dispose();
+        QLBanHang reset = new QLBanHang();
+        reset.getAccount().setText(lbUserName.getText());
+        reset.gettfMaNhanVien().setEditable(false);
+        reset.gettfMaNhanVien().setText(lbUserName.getText());
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         this.dispose();
-        QLKhachHang reset = new QLKhachHang();
-        reset.setExtendedState(reset.getExtendedState() | QLKhachHang.MAXIMIZED_BOTH);
+        QLBanHang reset = new QLBanHang();
         reset.getAccount().setText(lbUserName.getText());
+        reset.gettfMaNhanVien().setEditable(false);
+        reset.gettfMaNhanVien().setText(lbUserName.getText());
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void tfTenThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTenThanhVienActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfTenThanhVienActionPerformed
+
+    private void btThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btThemActionPerformed
+
+        String TK = tfTenThanhVien.getText();
+        String SDT = tfSDT.getText();
+
+        try{
+            Double.parseDouble(tfSDT.getText());
+        }catch(Exception e ){
+            JOptionPane.showMessageDialog(null, "Số điện thoại nhập không đúng định dạng!",  "", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if(TK.equals("") | SDT.equals("")){
+            JOptionPane.showMessageDialog(null, "Trường thông tin không hợp lệ!",  "", JOptionPane.WARNING_MESSAGE);
+            this.dispose();
+            QLKhachHang reset = new QLKhachHang();
+            reset.getAccount().setText(lbUserName.getText());
+        }
+        else{
+            String khprefixLessTen = "KH0";
+            String khprefixEqMoreTen = "KH";
+
+            try {
+
+                String urlUnicode = "jdbc:mysql://localhost:3306/quanlycuahang?user=root&password=&useUnicode=true&characterEncoding=utf8";
+                String driver = "com.mysql.jdbc.Driver";
+                Class.forName(driver).newInstance();
+                conn = (Connection) DriverManager.getConnection(urlUnicode);
+
+                //Tạo mã kh bằng cách đếm dòng hiện tại, tạo string = HD_xx
+                String SQL1 = "SELECT * FROM khachhang";
+                Statement stat1 = conn.createStatement();
+                ResultSet rs1 = stat1.executeQuery(SQL1);
+                rs1.last();
+
+                int countkh;//Thứ tự mã lớn nhất hiện tại
+                countkh = rs1.getRow();//Do Mã bắt đầu từ 01, và có dòng rỗng 00
+                String strcounthd = String.valueOf(countkh);
+                String MHD="";
+                if(countkh<10){
+                    MHD = khprefixLessTen+strcounthd;
+                }
+                else{
+                    MHD = khprefixEqMoreTen+strcounthd;
+                }
+                rs1.close();
+                stat1.close();
+
+                String SQL2="INSERT INTO khachhang VALUES(?,?,?,0)";
+
+                PreparedStatement stat2 = conn.prepareStatement(SQL2);
+                stat2.setString(1, MHD);
+                stat2.setString(2, TK);
+                stat2.setString(3, SDT);
+
+                stat2.executeUpdate();
+                conn.close();
+                JOptionPane.showMessageDialog(null, "Thêm thành công",  "", JOptionPane.WARNING_MESSAGE);
+                this.dispose();
+                QLKhachHang reset = new QLKhachHang();
+                reset.getAccount().setText(lbUserName.getText());
+
+            } catch (SQLException ex) {
+                Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InstantiationException ex) {
+                Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+    }//GEN-LAST:event_btThemActionPerformed
+
+    private void btSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSuaActionPerformed
+
+        DefaultTableModel dsThanhVien =(DefaultTableModel) tbThanhVien.getModel();
+        int SelectedRows = tbThanhVien.getSelectedRow();
+
+        String MKH = lbMKH.getText();
+        String TK = tfTenThanhVien.getText();
+        String SDT = tfSDT.getText();
+
+        try{
+            Double.parseDouble(tfSDT.getText());
+        }catch(Exception e ){
+            JOptionPane.showMessageDialog(null, "Số điện thoại nhập không đúng định dạng!",  "", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        try {
+            String urlUnicode = "jdbc:mysql://localhost:3306/quanlycuahang?user=root&password=&useUnicode=true&characterEncoding=utf8";
+            String driver = "com.mysql.jdbc.Driver";
+            Class.forName(driver).newInstance();
+            conn = (Connection) DriverManager.getConnection(urlUnicode);
+
+            String SQL1="UPDATE khachhang SET TenKH = ?, sdtKH = ? WHERE MaKH = ?";
+
+            PreparedStatement stat1 = conn.prepareStatement(SQL1);
+
+            stat1.setString(1, TK);
+            stat1.setString(2, SDT);
+            stat1.setString(3, MKH);
+
+            stat1.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Cập nhật thành công",  "", JOptionPane.WARNING_MESSAGE);
+            this.dispose();
+            this.dispose();
+            QLKhachHang reset = new QLKhachHang();
+            reset.getAccount().setText(lbUserName.getText());
+
+        } catch (SQLException ex) {
+            Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(QLKhachHang.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btSuaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -666,9 +672,9 @@ public class QLKhachHang extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbKhachHang;

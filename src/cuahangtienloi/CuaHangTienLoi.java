@@ -17,7 +17,6 @@ public class CuaHangTienLoi {
     public CuaHangTienLoi() {
 
         DangNhap hang = new DangNhap();
-        hang.setExtendedState(hang.getExtendedState() | DangNhap.MAXIMIZED_BOTH);
     }
 
     public static void main(String[] args) {

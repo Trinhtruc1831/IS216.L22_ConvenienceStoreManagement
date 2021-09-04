@@ -27,6 +27,7 @@ public class DangNhap extends javax.swing.JFrame {
         initComponents();
         setVisible(true);
         this.setLocationRelativeTo(null);
+        setPreferredSize(new Dimension(960, 580));
     }
 
     /**
@@ -46,26 +47,27 @@ public class DangNhap extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1920, 1080));
+        setMinimumSize(new java.awt.Dimension(956, 539));
+        setPreferredSize(new java.awt.Dimension(960, 580));
         getContentPane().setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(75, 139, 197));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Password: ");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(670, 800, 140, 50);
+        jLabel3.setBounds(220, 390, 140, 50);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 25)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(75, 139, 197));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("User: ");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(730, 740, 80, 50);
+        jLabel4.setBounds(280, 350, 80, 40);
 
-        tfUser.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        tfUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tfUser.setForeground(new java.awt.Color(75, 139, 197));
-        tfUser.setMargin(new java.awt.Insets(5, 15, 5, 15));
+        tfUser.setMargin(new java.awt.Insets(5, 10, 5, 15));
         tfUser.setName(""); // NOI18N
         tfUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,18 +75,18 @@ public class DangNhap extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tfUser);
-        tfUser.setBounds(810, 740, 300, 50);
+        tfUser.setBounds(360, 350, 240, 40);
 
-        tfPassword.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        tfPassword.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tfPassword.setForeground(new java.awt.Color(75, 139, 197));
-        tfPassword.setMargin(new java.awt.Insets(5, 15, 5, 15));
+        tfPassword.setMargin(new java.awt.Insets(5, 10, 5, 15));
         tfPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfPasswordActionPerformed(evt);
             }
         });
         getContentPane().add(tfPassword);
-        tfPassword.setBounds(810, 800, 300, 50);
+        tfPassword.setBounds(360, 396, 240, 40);
 
         jButton1.setBackground(new java.awt.Color(75, 139, 197));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -96,11 +98,11 @@ public class DangNhap extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(880, 880, 150, 50);
+        jButton1.setBounds(420, 450, 120, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/BackgroundLogin.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(1, -4, 1920, 1090);
+        jLabel1.setBounds(0, 0, 956, 539);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -139,43 +141,31 @@ public class DangNhap extends javax.swing.JFrame {
                  
                 String idPassword = rs.getString(1);
                 if(idPassword.equals(tfPass)){
-                    String SQL1 = "SELECT loainv, TinhTrang, MaNV FROM nhanvien WHERE user =?";//Coi user là quản lý hay nhân viên
+                    String SQL1 = "SELECT loainv, MaNV FROM nhanvien WHERE user =?";//Coi user là quản lý hay nhân viên
                     PreparedStatement stat1 = conn.prepareStatement(SQL1);
                     stat1.setString(1,user);
                     ResultSet rs1 = stat1.executeQuery();
                     rs1.beforeFirst();
                     rs1.next(); 
-                    
-                    int tt = rs1.getInt("TinhTrang");
-                    System.out.print(tt);
-                    if(tt==0){
-                        JOptionPane.showMessageDialog(null, "Bạn không còn quyền truy cập vào hệ thống!",  "", JOptionPane.WARNING_MESSAGE);
+                    int nhanvienType = rs1.getInt("loainv");
+                    String MaNhanVien = rs1.getString("MaNV");
+                    if(nhanvienType==1){
+                        this.dispose();
+                        QLTrangChu indexManager = new QLTrangChu();
+                        indexManager.getAccount().setText(MaNhanVien);
+                        
                     }
-                    else{
-                        int nhanvienType = rs1.getInt("loainv");
-                        String MaNhanVien = rs1.getString("MaNV");
-                        if(nhanvienType==1){
-                            this.dispose();
-                            QLTrangChu indexManager = new QLTrangChu();
-                            indexManager.setExtendedState(indexManager.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-                            indexManager.getAccount().setText(MaNhanVien);
-
-                        }
-                        if(nhanvienType==2){
-                            this.dispose();
-                            TNTrangChu indexStaff = new TNTrangChu();
-                            indexStaff.setExtendedState(indexStaff.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-                            indexStaff.getAccount().setText(MaNhanVien);
-                        }
-                        if(nhanvienType==3){
-                            this.dispose();
-                            TKTrangChu indexStaff = new TKTrangChu();
-                            indexStaff.setExtendedState(indexStaff.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-                            indexStaff.getAccount().setText(MaNhanVien);
-                        }
-                        rs1.close();
+                    if(nhanvienType==2){
+                        this.dispose();
+                        TNTrangChu indexStaff = new TNTrangChu();
+                        indexStaff.getAccount().setText(MaNhanVien);
                     }
-                    
+                    if(nhanvienType==3){
+                        this.dispose();
+                        TKTrangChu indexStaff = new TKTrangChu();
+                        indexStaff.getAccount().setText(MaNhanVien);
+                    }
+                    rs1.close();
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Tên tài khoản hoặc mật khẩu không đúng!",  "", JOptionPane.WARNING_MESSAGE);

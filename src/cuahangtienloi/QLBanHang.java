@@ -6,6 +6,7 @@
 package cuahangtienloi;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -45,35 +46,38 @@ public class QLBanHang extends javax.swing.JFrame {
     
     public QLBanHang() {
         initComponents();
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
         this.setLocationRelativeTo(null);
-        tbBanHang.getColumnModel().getColumn(1).setPreferredWidth(250);
-        tbBanHang.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
-                
-        tbHoaDon.getColumnModel().getColumn(1).setPreferredWidth(300);
-        tbHoaDon.getColumnModel().getColumn(2).setPreferredWidth(150);
-        tbHoaDon.getColumnModel().getColumn(4).setPreferredWidth(100);
-        tbHoaDon.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+        setPreferredSize(new Dimension(960, 580));
         
         JTableHeader tableHeader = tbBanHang.getTableHeader();
         tableHeader.setBackground(new java.awt.Color(75, 139, 197));
         tableHeader.setForeground(Color.white);
-        tableHeader.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        tableHeader.setFont(new Font("Tahoma", Font.PLAIN, 11));
         
-        tbTraCuu.getColumnModel().getColumn(0).setPreferredWidth(110);
-        tbTraCuu.getColumnModel().getColumn(1).setPreferredWidth(500);
-        tbTraCuu.getColumnModel().getColumn(2).setPreferredWidth(100);
-        tbTraCuu.getColumnModel().getColumn(3).setPreferredWidth(200);
-        tbTraCuu.getColumnModel().getColumn(4).setPreferredWidth(100);
-        tbTraCuu.getColumnModel().getColumn(5).setPreferredWidth(250);
-        tbTraCuu.getColumnModel().getColumn(6).setPreferredWidth(250);
+        tbBanHang.getColumnModel().getColumn(0).setPreferredWidth(25);
+        tbBanHang.getColumnModel().getColumn(1).setPreferredWidth(150);
+        tbBanHang.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+        
+        JTableHeader tableHeader2 = tbHoaDon.getTableHeader();
+        tableHeader2.setBackground(new java.awt.Color(225, 225, 225));
+        tableHeader2.setForeground(Color.black);
+        tableHeader2.setFont(new Font("Tahoma", Font.PLAIN, 9));
+        
+        tbHoaDon.getColumnModel().getColumn(0).setPreferredWidth(50);
+        tbHoaDon.getColumnModel().getColumn(1).setPreferredWidth(200);
+        tbHoaDon.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
+                        
+        tbTraCuu.getColumnModel().getColumn(0).setPreferredWidth(62);
+        tbTraCuu.getColumnModel().getColumn(1).setPreferredWidth(150);
+        tbTraCuu.getColumnModel().getColumn(2).setPreferredWidth(55);
+        tbTraCuu.getColumnModel().getColumn(4).setPreferredWidth(40);
         tbTraCuu.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
         
         JTableHeader tableHeader1 = tbTraCuu.getTableHeader();
         tableHeader1.setBackground(new java.awt.Color(75, 139, 197));
         tableHeader1.setForeground(Color.white);
-        tableHeader1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        tableHeader1.setFont(new Font("Tahoma", Font.PLAIN, 11));
         
         
         
@@ -149,11 +153,11 @@ public class QLBanHang extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        tfTichLuy = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         tfSDT = new javax.swing.JTextField();
         tfDiemDung = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        tfTichLuy = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         tbHoaDon = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -185,47 +189,59 @@ public class QLBanHang extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(956, 539));
+        setPreferredSize(new java.awt.Dimension(960, 580));
         getContentPane().setLayout(null);
 
         jPanel1.setLayout(null);
 
+        tfTichLuy.setEditable(false);
+        jPanel1.add(tfTichLuy);
+        tfTichLuy.setBounds(260, 110, 50, 20);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("Số điện thoại:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(0, 110, 100, 16);
+        jLabel7.setBounds(0, 90, 100, 20);
 
+        tfSDT.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        tfSDT.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        tfSDT.setMinimumSize(new java.awt.Dimension(1, 21));
+        tfSDT.setPreferredSize(new java.awt.Dimension(1, 21));
         tfSDT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfSDTActionPerformed(evt);
             }
         });
         jPanel1.add(tfSDT);
-        tfSDT.setBounds(110, 110, 180, 20);
+        tfSDT.setBounds(102, 93, 125, 18);
 
+        tfDiemDung.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         tfDiemDung.setText("0");
+        tfDiemDung.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        tfDiemDung.setPreferredSize(new java.awt.Dimension(1, 21));
         tfDiemDung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfDiemDungActionPerformed(evt);
             }
         });
         jPanel1.add(tfDiemDung);
-        tfDiemDung.setBounds(110, 140, 100, 22);
+        tfDiemDung.setBounds(102, 113, 40, 18);
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("Điểm dùng:");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(30, 140, 70, 16);
+        jLabel8.setBounds(30, 110, 70, 20);
 
-        tfTichLuy.setEditable(false);
-        jPanel1.add(tfTichLuy);
-        tfTichLuy.setBounds(350, 140, 80, 22);
-
+        tbHoaDon.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbHoaDon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "MaSP", "Tên sản phẩm", "Điểm sản phẩm", "Giá", "Số lượng"
+                "Mã", "Tên", "Điểm", "Giá", "Số lượng"
             }
         ) {
             Class[] types = new Class [] {
@@ -246,9 +262,9 @@ public class QLBanHang extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tbHoaDon);
 
         jPanel1.add(jScrollPane3);
-        jScrollPane3.setBounds(0, 190, 450, 330);
+        jScrollPane3.setBounds(20, 140, 290, 170);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Xác Nhận");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,49 +272,54 @@ public class QLBanHang extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(220, 540, 200, 40);
+        jButton1.setBounds(200, 320, 110, 30);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Lập hóa đơn");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(160, 30, 150, 30);
+        jLabel4.setBounds(120, 20, 120, 30);
 
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Mã nhân viên:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(10, 80, 90, 16);
+        jLabel9.setBounds(10, 70, 90, 20);
 
+        tfMaNhanVien.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         tfMaNhanVien.setText("NV01");
+        tfMaNhanVien.setMargin(new java.awt.Insets(1, 1, 1, 1));
+        tfMaNhanVien.setPreferredSize(new java.awt.Dimension(1, 21));
         tfMaNhanVien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfMaNhanVienActionPerformed(evt);
             }
         });
         jPanel1.add(tfMaNhanVien);
-        tfMaNhanVien.setBounds(110, 80, 60, 22);
+        tfMaNhanVien.setBounds(102, 72, 40, 18);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/IconExtra.png"))); // NOI18N
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(320, 140, 30, 20);
+        jLabel10.setBounds(244, 110, 20, 20);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(1420, 250, 450, 610);
+        jPanel1.setBounds(600, 120, 330, 370);
 
+        tfTimKiemMSP.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         tfTimKiemMSP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfTimKiemMSPActionPerformed(evt);
             }
         });
         getContentPane().add(tfTimKiemMSP);
-        tfTimKiemMSP.setBounds(420, 230, 210, 20);
+        tfTimKiemMSP.setBounds(140, 125, 140, 20);
 
-        tbBanHang.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        tbBanHang.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbBanHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Mã sản phẩm", "Tên sản phẩm", "Giá", "Điểm"
+                "Mã", "Tên", "Giá", "Điểm"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -309,8 +330,10 @@ public class QLBanHang extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tbBanHang.setIntercellSpacing(new java.awt.Dimension(20, 10));
-        tbBanHang.setRowHeight(30);
+        tbBanHang.setMinimumSize(new java.awt.Dimension(0, 0));
+        tbBanHang.setName(""); // NOI18N
+        tbBanHang.setRowHeight(20);
+        tbBanHang.setRowMargin(5);
         tbBanHang.setSelectionBackground(new java.awt.Color(204, 204, 255));
         tbBanHang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -320,8 +343,9 @@ public class QLBanHang extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tbBanHang);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(420, 260, 800, 300);
+        jScrollPane2.setBounds(140, 150, 430, 160);
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jButton3.setText("Tìm");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -329,19 +353,21 @@ public class QLBanHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(640, 230, 60, 20);
+        jButton3.setBounds(286, 125, 70, 20);
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel12.setText("Tra cứu thông tin sản phẩm");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(710, 620, 250, 25);
+        jLabel12.setBounds(250, 320, 230, 30);
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel13.setText("Mã sản phẩm:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(430, 670, 82, 16);
+        jLabel13.setBounds(142, 355, 80, 20);
         getContentPane().add(tfTraCuu);
-        tfTraCuu.setBounds(520, 670, 130, 20);
+        tfTraCuu.setBounds(220, 355, 70, 20);
 
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jButton4.setText("Tra cứu");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -349,9 +375,9 @@ public class QLBanHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(660, 670, 80, 20);
+        jButton4.setBounds(485, 353, 80, 23);
 
-        tbTraCuu.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        tbTraCuu.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbTraCuu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -368,34 +394,34 @@ public class QLBanHang extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tbTraCuu.setIntercellSpacing(new java.awt.Dimension(20, 10));
         tbTraCuu.setMinimumSize(new java.awt.Dimension(60, 0));
-        tbTraCuu.setRowHeight(30);
+        tbTraCuu.setRowHeight(20);
+        tbTraCuu.setRowMargin(2);
         jScrollPane1.setViewportView(tbTraCuu);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(420, 700, 800, 60);
+        jScrollPane1.setBounds(140, 380, 430, 40);
 
-        lbUserName.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lbUserName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lbUserName.setForeground(new java.awt.Color(255, 255, 255));
         lbUserName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lbUserName.setText("NVxx");
         getContentPane().add(lbUserName);
-        lbUserName.setBounds(1760, 60, 100, 50);
+        lbUserName.setBounds(850, 20, 60, 50);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Welcome");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(1590, 60, 170, 50);
+        jLabel5.setBounds(730, 20, 120, 50);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("!!");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(1860, 60, 30, 50);
+        jLabel6.setBounds(910, 20, 20, 50);
 
         IndexIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/IconCT.png"))); // NOI18N
         IndexIcon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -404,10 +430,10 @@ public class QLBanHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(IndexIcon);
-        IndexIcon.setBounds(60, 40, 100, 100);
+        IndexIcon.setBounds(30, 20, 60, 60);
 
         jButton8.setBackground(new java.awt.Color(75, 139, 197));
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Bán Hàng");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -416,10 +442,10 @@ public class QLBanHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton8);
-        jButton8.setBounds(0, 260, 300, 70);
+        jButton8.setBounds(10, 120, 110, 40);
 
         jButton9.setBackground(new java.awt.Color(75, 139, 197));
-        jButton9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton9.setForeground(new java.awt.Color(255, 255, 255));
         jButton9.setText("Thành Viên");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -428,10 +454,10 @@ public class QLBanHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton9);
-        jButton9.setBounds(0, 370, 300, 70);
+        jButton9.setBounds(10, 170, 110, 40);
 
         jButton7.setBackground(new java.awt.Color(75, 139, 197));
-        jButton7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("Nhân Viên");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -440,10 +466,10 @@ public class QLBanHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton7);
-        jButton7.setBounds(0, 480, 300, 70);
+        jButton7.setBounds(10, 220, 110, 40);
 
         jButton2.setBackground(new java.awt.Color(75, 139, 197));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Thống Kê");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -452,10 +478,10 @@ public class QLBanHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(0, 590, 300, 70);
+        jButton2.setBounds(10, 270, 110, 40);
 
         jButton10.setBackground(new java.awt.Color(75, 139, 197));
-        jButton10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton10.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setText("Kho Hàng");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -464,10 +490,10 @@ public class QLBanHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton10);
-        jButton10.setBounds(0, 700, 300, 70);
+        jButton10.setBounds(10, 320, 110, 40);
 
         jButton11.setBackground(new java.awt.Color(75, 139, 197));
-        jButton11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton11.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Đăng Xuất");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -476,8 +502,9 @@ public class QLBanHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton11);
-        jButton11.setBounds(0, 810, 300, 70);
+        jButton11.setBounds(10, 370, 110, 40);
 
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/IconReload.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -485,11 +512,11 @@ public class QLBanHang extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(1890, 150, 30, 30);
+        jLabel3.setBounds(910, 60, 20, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cuahangtienloi/Image/Background.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1920, 1080);
+        jLabel1.setBounds(0, 0, 956, 539);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -629,7 +656,7 @@ public class QLBanHang extends javax.swing.JFrame {
                 
                 MessageDialogHoaDon alert = new MessageDialogHoaDon();
                 DefaultTableModel confirmHoaDon =(DefaultTableModel)  alert.getHoaDon().getModel();
-                alert.setSize(480, 700);
+                alert.setSize(385, 615);
                 alert.getNhanVien().setText(MNV);
                 alert.getNgayLap().setText(nowDate);
                 alert.getKhachHang().setText(SDT);
@@ -808,14 +835,13 @@ public class QLBanHang extends javax.swing.JFrame {
     private void IndexIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IndexIconMouseClicked
         this.dispose();
         QLTrangChu reset = new QLTrangChu();
-        reset.setExtendedState(reset.getExtendedState() | QLTrangChu.MAXIMIZED_BOTH);
         reset.getAccount().setText(lbUserName.getText());
     }//GEN-LAST:event_IndexIconMouseClicked
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         this.dispose();
         QLBanHang reset = new QLBanHang();
-        reset.setExtendedState(reset.getExtendedState() | QLBanHang.MAXIMIZED_BOTH);
+        setPreferredSize(new Dimension(960, 580));
         reset.getAccount().setText(lbUserName.getText());
         reset.gettfMaNhanVien().setEditable(false);
         reset.gettfMaNhanVien().setText(lbUserName.getText());
@@ -825,28 +851,24 @@ public class QLBanHang extends javax.swing.JFrame {
 
         this.dispose();
         QLKhachHang reset = new QLKhachHang();
-        reset.setExtendedState(reset.getExtendedState() | QLKhachHang.MAXIMIZED_BOTH);
         reset.getAccount().setText(lbUserName.getText());
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         this.dispose();
         QLNhanSu reset = new QLNhanSu();
-        reset.setExtendedState(reset.getExtendedState() | QLNhanSu.MAXIMIZED_BOTH);
         reset.getAccount().setText(lbUserName.getText());
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.dispose();
         QLThongKe reset = new QLThongKe();
-        reset.setExtendedState(reset.getExtendedState() | QLThongKe.MAXIMIZED_BOTH);
         reset.getAccount().setText(lbUserName.getText());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         this.dispose();
         QLKhoHang reset = new QLKhoHang();
-        reset.setExtendedState(reset.getExtendedState() | QLKhoHang.MAXIMIZED_BOTH);
         reset.getAccount().setText(lbUserName.getText());
         reset.gettfMaNhanVien().setEditable(false);
         reset.gettfMaNhanVien().setText(lbUserName.getText());
@@ -856,13 +878,11 @@ public class QLBanHang extends javax.swing.JFrame {
         this.dispose();
         DangNhap login = new DangNhap();
         login.setVisible(true);
-        login.setExtendedState(login.getExtendedState() | DangNhap.MAXIMIZED_BOTH);
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         this.dispose();
         QLBanHang reset = new QLBanHang();
-        reset.setExtendedState(reset.getExtendedState() | QLBanHang.MAXIMIZED_BOTH);
         reset.getAccount().setText(lbUserName.getText());
         reset.gettfMaNhanVien().setEditable(false);
         reset.gettfMaNhanVien().setText(lbUserName.getText());
