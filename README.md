@@ -33,7 +33,7 @@ NetBeans is an IDE for Java
 
 ![](https://imgur.com/FLzFhdC.png)
 
-![](https://imgur.com/hLkDP9i.png)
+![](https://imgur.com/zqRLt2e.png)
 
 3. ### Step 3:
 * Access to "http://localhost:80/phpmyadmin"
