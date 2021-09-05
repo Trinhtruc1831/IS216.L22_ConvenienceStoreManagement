@@ -59,9 +59,9 @@ Link download database: https://drive.google.com/file/d/1mvs94h2Rz3fdCpDEsM6l7g_
 3. ### Step 3:
 Run
 
-account: truc1831
+Aaccount: truc1831
 
-pass: thanhtruc1831
+Pass: thanhtruc1831
 
 *Note: You can also see more accounts in "nhanvien" table in "quanlycuahang" database.
 
